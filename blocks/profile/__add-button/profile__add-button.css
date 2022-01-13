@@ -8,3 +8,8 @@
   height: 50px;
   margin: auto 0 auto auto;
 }
+
+.profile__add-button:hover {
+  cursor: pointer;
+  opacity: .6;
+}
