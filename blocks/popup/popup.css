@@ -1,0 +1,17 @@
+.popup {
+  position: fixed;
+  top: 155px;
+  right: 385px;
+  display: grid;
+  grid-template-columns: 430px 32px;
+  grid-template-rows: 32px 330px;
+  gap: 8px;
+}
+
+.popup:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  color: black;
+  opacity: .5;
+}
