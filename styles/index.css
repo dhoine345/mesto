@@ -23,11 +23,11 @@
 @import url(../blocks/element/__like/element__like.css);
 
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__close/popup__close-button.css);
+@import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__title/popup__title.css);
 
 @import url(../blocks/form/form.css);
-@import url(../blocks/form/__title/form__title.css);
 @import url(../blocks/form/__input-job/form__input-job.css);
 @import url(../blocks/form/__input-name/form__input-name.css);
 @import url(../blocks/form/__submit-button/form__submit-button.css);
