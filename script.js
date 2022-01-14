@@ -6,7 +6,7 @@ let popupForm = document.querySelector('.popup__form');
 let nameInput = document.querySelector('.form__input-name');
 let jobInput = document.querySelector('.form__input-job');
 let profileAvatarName = document.querySelector('.profile__avatar-name');
-let profileAvatarHobby = document.querySelector('.profile__avatar-hobby');
+let profileAvatarHobby = document.querySelector('.profile__avatar-job');
 
 editButton.addEventListener('click', function() {
   popup.style = `display: grid`;
