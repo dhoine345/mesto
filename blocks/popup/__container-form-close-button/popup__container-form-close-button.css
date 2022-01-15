@@ -7,3 +7,13 @@
   grid-column: 2;
   justify-self: end;
 }
+
+@media screen and (max-width:600px) {
+  .popup__container-form-close-button {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 16px;
+    background-size: contain;
+    align-self: flex-end;
+  }
+}

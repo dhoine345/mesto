@@ -6,3 +6,12 @@
   max-width: 470px;
   margin: 0 auto;
 }
+
+@media screen and (max-width:600px) {
+  .popup__container {
+    display: flex;
+    flex-direction:column-reverse;
+    max-width: 282px;
+    padding-top: 87px;
+  }
+}
