@@ -23,7 +23,8 @@ submitButton.addEventListener('click', function() {
 
 for (let i = 0; i < elementLike.length; i += 1) {
  elementLike[i].addEventListener('click', function() {
- elementLike[i].style = 'background-image: url(./image/like_active.svg;)';
+ elementLike[i].classList.add('element__like_active');
+ elementLike[i].classList.remove('button-hover');
   });
 };
 
