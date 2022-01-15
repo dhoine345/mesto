@@ -4,3 +4,9 @@
   line-height: 1.22;
   margin: 9px 0 0 0;
 }
+
+@media screen and (max-width:500px) {
+  .profile__avatar-job {
+    font-size: 14px;
+  }
+}

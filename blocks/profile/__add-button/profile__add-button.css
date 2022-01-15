@@ -8,3 +8,16 @@
   height: 50px;
   margin: auto 0 auto auto;
 }
+
+@media screen and (max-width:768px) {
+  .profile__add-button {
+    margin: 36px auto auto auto;
+    width: 250px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .profile__add-button {
+    width: 250px;
+  }
+}
