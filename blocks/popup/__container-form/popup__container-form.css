@@ -1,7 +1,8 @@
-.popup__form {
+.popup__container-form {
   width: 430px;
   height: 330px;
   background-color: #fff;
   border-radius: 10px;
   grid-row: 2;
+  justify-self: end;
 }

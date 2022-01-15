@@ -1,8 +1,9 @@
-.popup__close-button {
+.popup__container-form-close-button {
   background-image: url(../../../image/Close\ Icon.png);
   background-color: rgba(0, 0, 0, 0);
   border: none;
   width: 32px;
   height: 32px;
   grid-column: 2;
+  justify-self: end;
 }

@@ -1,0 +1,8 @@
+.popup__container {
+  padding-top: 155px;
+  display: grid;
+  grid-template-columns: 450px 40px;
+  grid-template-rows: 40px 330px;
+  max-width: 470px;
+  margin: 0 auto;
+}
