@@ -14,5 +14,7 @@
 * Figma
 * JavaScript
 
+## Ссылка на проект на GitHub Pages: https://dhoine345.github.io/mesto/
+
 ## Планы по доработке
 * Оптимизировать адаптивность сайта
