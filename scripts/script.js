@@ -10,7 +10,7 @@ let profileAvatarHobby = document.querySelector('.profile__avatar-job');
 let elementLike = document.querySelectorAll('.element__like');
 
 editButton.addEventListener('click', function() {
-  popup.style = 'display: block';
+  popup.style = 'display: flex' 'align-items: center';
 });
 
 closeButton.addEventListener('click', function() {

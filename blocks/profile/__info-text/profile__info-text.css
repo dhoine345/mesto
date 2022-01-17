@@ -1,5 +1,9 @@
+.profile__info-text {
+  width: 400px;
+}
+
 @media screen and (max-width:768px) {
   .profile__info-text {
     text-align: center;
-  }
+    }
 }

@@ -6,13 +6,13 @@
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid #fff;
-  margin: 20px auto auto 19px;
+  margin: 15px auto auto 19px;
 }
 
 @media screen and (max-width:500px) {
   .profile__edit-button {
   width: 18px;
   height: 18px;
-  margin: 7px auto auto 10px;
+  margin: 6px auto auto 10px;
   }
 }
