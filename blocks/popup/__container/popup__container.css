@@ -1,17 +1,16 @@
 .popup__container {
-  display: grid;
-  grid-template-columns: 450px 40px;
-  grid-template-rows: 40px 330px;
-  max-width: 470px;
-  margin: 0 auto;
+  width: 430px;
+  background-color: #fff;
+  border-radius: 10px;
+  grid-row: 2;
+  justify-self: end;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width:600px) {
   .popup__container {
-    display: flex;
-    flex-direction:column-reverse;
-    max-width: 282px;
-    padding-top: 87px;
+    width: 282px;
+    margin: 2px 0 43px;
   }
 }

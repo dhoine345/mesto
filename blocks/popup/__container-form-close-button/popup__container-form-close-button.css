@@ -12,8 +12,9 @@
   .popup__container-form-close-button {
     width: 20px;
     height: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     background-size: contain;
     align-self: flex-end;
+    grid-column: 1;
   }
 }

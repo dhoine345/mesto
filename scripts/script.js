@@ -7,21 +7,20 @@ let nameInput = document.querySelector('.popup__container-form-input_type_name')
 let jobInput = document.querySelector('.popup__container-form-input_type_job');
 let profileAvatarName = document.querySelector('.profile__avatar-name');
 let profileAvatarHobby = document.querySelector('.profile__avatar-job');
-/*let elementLike = document.querySelectorAll('.element__like');*/
+
+
+function openPopup () {
+  
+}
 
 editButton.addEventListener('click', function() {
-  popup.style = 'display: flex';
+  popup.classList.toggle('popup_opened');
 });
 
 closeButton.addEventListener('click', function() {
   popup.style = 'display: none';
 });
 
-/*for (let i = 0; i < elementLike.length; i += 1) {
- elementLike[i].addEventListener('click', function() {
- elementLike[i].classList.add('element__like_active');
- });
-};*/
 
 function confirmPopup () {
   popup.style = 'display: none';
@@ -36,3 +35,9 @@ function formSubmitHandler (evt) {
 
 popupForm.addEventListener('submit', formSubmitHandler);
 
+/*for (let i = 0; i < elementLike.length; i += 1) {
+ elementLike[i].addEventListener('click', function() {
+ elementLike[i].classList.add('element__like_active');
+ });
+};*/
+/*let elementLike = document.querySelectorAll('.element__like');*/
