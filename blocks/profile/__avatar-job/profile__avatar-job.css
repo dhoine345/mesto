@@ -10,7 +10,7 @@
 
 @media screen and (max-width:500px) {
   .profile__avatar-job {
-    font-size: 14px; 
+    font-size: 14px;
     line-height: 1.21;
   }
 }
