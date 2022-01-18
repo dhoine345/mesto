@@ -1,13 +1,5 @@
 .popup_opened {
   display: grid;
-  grid-template-columns: 470px 40px;
-  grid-template-rows: 40px 370px;
-  justify-content: center;
-  align-content: center;
 }
 
-@media screen and (max-width:600px) {
-  .popup_opened {
-    grid-template-columns: 282px;
-  }
-}
+

@@ -1,4 +1,5 @@
 .element__like {
+  background-image: url(../../../image/like_disabled.svg);
   background-repeat: no-repeat;
   border: none;
   background-color: rgba(0, 0, 0, 0);

@@ -10,11 +10,11 @@ let profileAvatarHobby = document.querySelector('.profile__avatar-job');
 
 //Функции
 function openPopup () {
-  popup.classList.toggle('popup_opened');
+  popup.classList.add('popup_opened');
 };
 
 function removePopup () {
-  popup.classList.remove ('popup_opened');
+  popup.classList.remove('popup_opened');
 };
 
 function formSubmitHandler (evt) {
