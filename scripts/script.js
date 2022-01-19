@@ -11,6 +11,8 @@ let profileAvatarHobby = document.querySelector('.profile__avatar-job');
 //Функции
 function openPopup () {
   popup.classList.add('popup_opened');
+  nameInput.value = profileAvatarName.textContent; //неправильно понял замечания еще при первой итерации ¯\_(ツ)_/¯
+  jobInput.value = profileAvatarHobby.textContent;
 };
 
 function removePopup () {
