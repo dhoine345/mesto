@@ -2,8 +2,9 @@
   background-image: url(../../../image/plus.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-color: black;
-  border: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #fff;
+  border-radius: 2px;
   width: 150px;
   height: 50px;
   margin: auto 0 auto auto;
@@ -11,13 +12,14 @@
 
 @media screen and (max-width:768px) {
   .profile__add-button {
-    margin: 36px auto auto auto;
+    margin: 32px auto auto auto;
     width: 250px;
   }
 }
 
 @media screen and (max-width:500px) {
   .profile__add-button {
-    width: 250px;
+    width: 282px;
+    background-size: 16px 16px;
   }
 }

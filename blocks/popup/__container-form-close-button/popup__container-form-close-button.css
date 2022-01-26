@@ -1,5 +1,5 @@
 .popup__container-form-close-button {
-  background-image: url(../../../image/Close\ Icon.png);
+  background-image: url(../../../image/Close-Icon.svg);
   background-color: rgba(0, 0, 0, 0);
   border: none;
   width: 32px;
@@ -10,10 +10,11 @@
 
 @media screen and (max-width:600px) {
   .popup__container-form-close-button {
-    width: 16px;
-    height: 16px;
-    margin-bottom: 16px;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 14px;
     background-size: contain;
     align-self: flex-end;
+    grid-column: 1;
   }
 }

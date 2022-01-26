@@ -1,4 +1,4 @@
-.popup__container-form-input-name {
+.popup__container-form-input {
   width: 358px;
   padding: 0 0 10px 0;
   border: none;
@@ -9,10 +9,16 @@
   margin: 47px 36px 0;
 }
 
-@media screen and (max-width:600px) {
-  .popup__container-form-input-name {
-    width: 238px;
-    margin: 0 22px 30px;
-  }
+.popup__container-form-input:last-of-type {
+  margin: 30px 36px 47px;
 }
 
+@media screen and (max-width:600px) {
+  .popup__container-form-input {
+    width: 238px;
+    margin: 0 22px 27px;
+  }
+  .popup__container-form-input:last-of-type {
+    margin: 0 22px 46px;
+  }
+}
