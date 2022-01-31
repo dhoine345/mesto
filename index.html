@@ -25,14 +25,6 @@
       <button class="profile__add-button button-hover" type="button"></button>
     </section>
     <section class="elements">
-      <template class="element-template">
-        <article class="element">
-          <img class="element__place-photo">
-          <h2 class="element__place-name"></h2>
-          <button class="element__like" type="button"></button>
-          <button class="element__delete button-hover" type="button"></button>
-        </article>
-      </template>
     </section>
     <div class="popup popup_edit">
       <div class="popup__container">
@@ -68,7 +60,14 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
-
+  <template class="element-template">
+    <article class="element">
+      <img class="element__place-photo">
+      <h2 class="element__place-name"></h2>
+      <button class="element__like" type="button"></button>
+      <button class="element__delete button-hover" type="button"></button>
+    </article>
+  </template>
   <script src="./scripts/cards.js"></script>
   <script src="./scripts/script.js"></script>
 
