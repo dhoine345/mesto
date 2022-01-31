@@ -7,6 +7,7 @@
   <title>Mesto</title>
   <link rel="stylesheet" href="./styles/index.css">
 </head>
+
 <body class="page">
   <header class="header">
     <img src="./image/logo.svg" class="header__logo" alt="Логотип сайта Место Россия.">
@@ -29,44 +30,50 @@
           <img class="element__place-photo">
           <h2 class="element__place-name"></h2>
           <button class="element__like" type="button"></button>
-          <button class="element__delete button-hover"></button>
+          <button class="element__delete button-hover" type="button"></button>
         </article>
       </template>
     </section>
     <div class="popup popup_edit">
       <div class="popup__container">
+        <button class="popup__container-form-close-button button-hover" type="button"></button>
         <h2 class="popup__container-form-title">Редактировать профиль</h2>
-        <form class="popup__container-form edit" name="edit-profile">
+        <form class="popup__container-form popup__container-form_edit" name="edit-profile">
           <input type="text" class="popup__container-form-input popup__container-form-input_type_name" value="">
           <input type="text" class="popup__container-form-input popup__container-form-input_type_job" value="">
           <button class="popup__container-form-submit-button" type="submit">Сохранить</button>
         </form>
       </div>
-      <button class="popup__container-form-close-button button-hover" type="button"></button>
     </div>
     <div class="popup popup_add">
       <div class="popup__container">
+        <button class="popup__container-form-close-button button-hover" type="button"></button>
         <h2 class="popup__container-form-title">Новое место</h2>
-        <form class="popup__container-form add" name="add-new-element">
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_place" value="Название">
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_link" value="Ссылка на картинку">
+        <form class="popup__container-form popup__container-form_add" name="add-new-element">
+          <input type="text" class="popup__container-form-input popup__container-form-input_type_place" placeholder="Название">
+          <input type="text" class="popup__container-form-input popup__container-form-input_type_link"  placeholder="Ссылка на картинку">
           <button class="popup__container-form-submit-button" type="submit">Создать</button>
         </form>
       </div>
-      <button class="popup__container-form-close-button button-hover" type="button"></button>
     </div>
-    <div class="popup-card">
-      <button class="popup-card__close-button button-hover" type="button"></button>
-      <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg" class="popup-card__photo">
-      <h2 class="popup-card__title">Редактировать профиль</h2>
+    <div class="popup popup_photo">
+      <div class="popup__photo-container">
+        <button class="popup__container-form-close-button button-hover" type="button"></button>
+        <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg" class="popup__photo">
+        <h2 class="popup__photo-name"></h2>
+      </div>
     </div>
   </main>
 
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
+
   <script src="./scripts/cards.js"></script>
   <script src="./scripts/script.js"></script>
+
 </body>
 </html>
+
+
 
