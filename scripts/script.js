@@ -93,14 +93,10 @@ function submitEditProfile (evt) {
   closePopup (popupEditProfile);
 };
 
-function clickClosePopupButton (e) {
-  e.target.closest('.popup_opened').remove();
-}
-
 //Обработчики
 editButton.addEventListener('click', openPopupEditProfile); //открыть форму редактирования профайла
 addButton.addEventListener('click', openPopupAddCard); //открыть форму добавления новой карточки
-closePopupButtons.forEach(item => {item.addEventListener('click', clickClosePopupButton)}); //закрыть форму редактирования профайла
+closePopupButtons.forEach(item => {item.addEventListener('click', (e) => closePopup(e.target.closest('.popup_opened')))}); //закрыть форму редактирования профайла
 popupFormEdit.addEventListener('submit', submitEditProfile); //подтвердить ввод новых данных в профайле
 popupFormAdd.addEventListener('submit', addNewCard); //добавить новую карточку на страницу
 
