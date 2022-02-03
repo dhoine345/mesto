@@ -63,7 +63,7 @@ function addNewCard (evt) {
     link: linkInput.value
   });
   renderCard(card, cardsContainer);
-  removePopup (popupAddCard);
+  closePopup (popupAddCard);
 };
 
 function openPopup (popup) {
@@ -82,7 +82,7 @@ function openPopupAddCard() {
   linkInput.value = '';
 };
 
-function removePopup (popup) {
+function closePopup (popup) {
   popup.classList.remove('popup_opened');
 };
 
@@ -90,14 +90,18 @@ function submitEditProfile (evt) {
   evt.preventDefault();
   profileAvatarName.textContent = nameInput.value;
   profileAvatarHobby.textContent = jobInput.value;
-  removePopup (popupEditProfile);
+  closePopup (popupEditProfile);
 };
+
+function clickClosePopupButton (e) {
+  e.target.closest('.popup_opened').remove();
+}
 
 //Обработчики
 editButton.addEventListener('click', openPopupEditProfile); //открыть форму редактирования профайла
 addButton.addEventListener('click', openPopupAddCard); //открыть форму добавления новой карточки
-closePopupButtons.forEach(item => {item.addEventListener('click', e => {e.target.closest('.popup_opened').remove()})}); //закрыть форму редактирования профайла
-popupFormEdit.addEventListener('submit', formSubmitHandler); //подтвердить ввод новых данных в профайле
+closePopupButtons.forEach(item => {item.addEventListener('click', clickClosePopupButton)}); //закрыть форму редактирования профайла
+popupFormEdit.addEventListener('submit', submitEditProfile); //подтвердить ввод новых данных в профайле
 popupFormAdd.addEventListener('submit', addNewCard); //добавить новую карточку на страницу
 
 
