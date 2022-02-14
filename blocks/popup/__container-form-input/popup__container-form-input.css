@@ -6,19 +6,20 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 1.21;
-  margin: 47px 36px 0;
+  margin: 0 36px 0;
+  outline: none;
 }
 
 .popup__container-form-input:last-of-type {
-  margin: 30px 36px 47px;
+  margin: 25px 36px 0;
 }
 
 @media screen and (max-width:600px) {
   .popup__container-form-input {
     width: 238px;
-    margin: 0 22px 27px;
+    margin: 0 22px;
   }
   .popup__container-form-input:last-of-type {
-    margin: 0 22px 46px;
+    margin: 22px 22px 0;
   }
 }

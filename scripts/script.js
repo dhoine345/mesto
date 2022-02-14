@@ -16,12 +16,11 @@ const placeInput = document.querySelector('.popup__container-form-input_type_pla
 const linkInput = document.querySelector('.popup__container-form-input_type_link')
 const cardPhoto = document.querySelector('.element__place-photo');
 const popupPhoto = document.querySelector('.popup_photo');
-const popupPhotoName = document.querySelector('.popup__photo-name')
-const popupPhotoImage = document.querySelector('.popup__photo')
-
+const popupPhotoName = document.querySelector('.popup__photo-name');
+const popupPhotoImage = document.querySelector('.popup__photo');
+const popups = document.querySelectorAll('.popup');
 
 //Функции
-
 function createCard (item) {
   const card = cardTemplate.querySelector('.element').cloneNode(true);
   const cardText = card.querySelector('.element__place-name');
@@ -68,6 +67,7 @@ function addNewCard (evt) {
 
 function openPopup (popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closedByEscape);
 };
 
 function openPopupEditProfile () {
@@ -84,6 +84,7 @@ function openPopupAddCard() {
 
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
+  document.addEventListener('keydown', closedByEscape)
 };
 
 function submitEditProfile (evt) {
@@ -93,6 +94,14 @@ function submitEditProfile (evt) {
   closePopup (popupEditProfile);
 };
 
+function closedByEscape(evt) {
+  if (evt.key == 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    if (popupOpened)
+      closePopup(popupOpened);
+  }
+}
+
 //Обработчики
 editButton.addEventListener('click', openPopupEditProfile); //открыть форму редактирования профайла
 addButton.addEventListener('click', openPopupAddCard); //открыть форму добавления новой карточки
@@ -100,7 +109,13 @@ closePopupButtons.forEach(item => {item.addEventListener('click', (e) => closePo
 popupFormEdit.addEventListener('submit', submitEditProfile); //подтвердить ввод новых данных в профайле
 popupFormAdd.addEventListener('submit', addNewCard); //добавить новую карточку на страницу
 
+//закрытие попапа кликом на оверлей
+popups.forEach((item) => {
+  item.addEventListener('mousedown', (e) => {
+    if (e.target.classList.contains('popup_opened')) {
+      closePopup(item);
+    }
+  });
+});
 
 initialCards.forEach(item => {renderCard(item, cardsContainer)});
-
-

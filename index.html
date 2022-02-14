@@ -30,10 +30,12 @@
       <div class="popup__container">
         <button class="popup__container-form-close-button button-hover" type="button"></button>
         <h2 class="popup__container-form-title">Редактировать профиль</h2>
-        <form class="popup__container-form popup__container-form_edit" name="edit-profile">
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_name" value="">
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_job" value="">
-          <button class="popup__container-form-submit-button" type="submit">Сохранить</button>
+        <form class="popup__container-form popup__container-form_edit" name="edit-profile" novalidate>
+          <input type="text" class="popup__container-form-input popup__container-form-input_type_name" value="" required minlength="2" maxlength="40" id="input-name">
+          <span class="popup__error popup__error_visible input-name-error"></span>
+          <input type="text" class="popup__container-form-input popup__container-form-input_type_job" value="" required minlength="2" maxlength="200" id="input-job">
+          <span class="popup__error popup__error_visible input-job-error"></span>
+          <button class="popup__submit-button " type="submit">Сохранить</button>
         </form>
       </div>
     </div>
@@ -41,10 +43,12 @@
       <div class="popup__container">
         <button class="popup__container-form-close-button button-hover" type="button"></button>
         <h2 class="popup__container-form-title">Новое место</h2>
-        <form class="popup__container-form popup__container-form_add" name="add-new-element">
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_place" placeholder="Название">
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_link"  placeholder="Ссылка на картинку">
-          <button class="popup__container-form-submit-button" type="submit">Создать</button>
+        <form class="popup__container-form popup__container-form_add" name="add-new-element" novalidate>
+          <input type="text" class="popup__container-form-input popup__container-form-input_type_place" placeholder="Название" required minlength="2" maxlength="30" id="input-place-name">
+          <span class="popup__error popup__error_visible input-place-name-error"></span>
+          <input type="url" class="popup__container-form-input popup__container-form-input_type_link"  placeholder="Ссылка на картинку" required id="input-place-url">
+          <span class="popup__error popup__error_visible input-place-url-error"></span>
+          <button class="popup__submit-button" type="submit">Создать</button>
         </form>
       </div>
     </div>
@@ -68,9 +72,9 @@
       <button class="element__delete button-hover" type="button"></button>
     </article>
   </template>
+  <script src="./scripts/validate.js"></script>
   <script src="./scripts/cards.js"></script>
   <script src="./scripts/script.js"></script>
-
 </body>
 </html>
 
