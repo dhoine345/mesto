@@ -19,6 +19,7 @@ const popupPhoto = document.querySelector('.popup_photo');
 const popupPhotoName = document.querySelector('.popup__photo-name');
 const popupPhotoImage = document.querySelector('.popup__photo');
 const popups = document.querySelectorAll('.popup');
+const submitButtonAddCard = document.querySelector('.submit-button-add');
 
 //Функции
 function createCard (item) {
@@ -63,11 +64,14 @@ function addNewCard (evt) {
   });
   renderCard(card, cardsContainer);
   closePopup (popupAddCard);
+  popupFormAdd.reset();
+  disableSubmitButton();
 };
 
 function openPopup (popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closedByEscape);
+  closePopupByButtonAndOverlay();
 };
 
 function openPopupEditProfile () {
@@ -78,13 +82,11 @@ function openPopupEditProfile () {
 
 function openPopupAddCard() {
   openPopup(popupAddCard);
-  placeInput.value = '';
-  linkInput.value = '';
 };
 
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
-  document.addEventListener('keydown', closedByEscape)
+  document.removeEventListener('keydown', closedByEscape);
 };
 
 function submitEditProfile (evt) {
@@ -100,22 +102,30 @@ function closedByEscape(evt) {
     if (popupOpened)
       closePopup(popupOpened);
   }
-}
+};
+
+function disableSubmitButton() {
+  submitButtonAddCard.setAttribute('disabled', '');
+  submitButtonAddCard.classList.add('popup__submit-button_disabled');
+};
+
+function closePopupByButtonAndOverlay () {
+    popups.forEach((popup) => {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup)
+        }
+        if (evt.target.classList.contains('popup__container-form-close-button')) {
+          closePopup(popup)
+        }
+    })
+})
+};
 
 //Обработчики
 editButton.addEventListener('click', openPopupEditProfile); //открыть форму редактирования профайла
 addButton.addEventListener('click', openPopupAddCard); //открыть форму добавления новой карточки
-closePopupButtons.forEach(item => {item.addEventListener('click', (e) => closePopup(e.target.closest('.popup_opened')))}); //закрыть форму редактирования профайла
 popupFormEdit.addEventListener('submit', submitEditProfile); //подтвердить ввод новых данных в профайле
 popupFormAdd.addEventListener('submit', addNewCard); //добавить новую карточку на страницу
-
-//закрытие попапа кликом на оверлей
-popups.forEach((item) => {
-  item.addEventListener('mousedown', (e) => {
-    if (e.target.classList.contains('popup_opened')) {
-      closePopup(item);
-    }
-  });
-});
 
 initialCards.forEach(item => {renderCard(item, cardsContainer)});

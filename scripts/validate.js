@@ -68,6 +68,5 @@ enableValidation ({
   inputSelector: '.popup__container-form-input',
   submitButtonSelector: '.popup__submit-button',
   inactiveButtonClass: 'popup__submit-button_disabled',
-  inputErrorClass: 'popup__container-form-input_type_error', //подчеркивает инпут красным
-  errorClass: 'popup__error_visible'
+  inputErrorClass: 'popup__container-form-input_type_error'
 });
