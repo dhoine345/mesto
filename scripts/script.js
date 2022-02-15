@@ -71,7 +71,6 @@ function addNewCard (evt) {
 function openPopup (popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closedByEscape);
-  closePopupByButtonAndOverlay();
 };
 
 function openPopupEditProfile () {
@@ -129,3 +128,5 @@ popupFormEdit.addEventListener('submit', submitEditProfile); //подтверд�
 popupFormAdd.addEventListener('submit', addNewCard); //добавить новую карточку на страницу
 
 initialCards.forEach(item => {renderCard(item, cardsContainer)});
+
+closePopupByButtonAndOverlay();
