@@ -1,3 +1,11 @@
+const validationConfig = {
+  formSelector: '.popup__container-form',
+  inputSelector: '.popup__container-form-input',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__submit-button_disabled',
+  inputErrorClass: 'popup__container-form-input_type_error'
+};
+
 //Показать ошибку
 const showInputError = (object, formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -63,10 +71,4 @@ const enableValidation = (object) => {
   });
 };
 
-enableValidation ({
-  formSelector: '.popup__container-form',
-  inputSelector: '.popup__container-form-input',
-  submitButtonSelector: '.popup__submit-button',
-  inactiveButtonClass: 'popup__submit-button_disabled',
-  inputErrorClass: 'popup__container-form-input_type_error'
-});
+enableValidation (validationConfig);
