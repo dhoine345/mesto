@@ -1,6 +1,6 @@
 import { FormValidator } from './FormValidator.js';
 import { closePopup, openPopup } from './utils.js';
-import { Card } from './card.js';
+import { Card } from './Сard.js';
 import { initialCards } from './cards.js';
 
 //Переменные
@@ -21,7 +21,6 @@ const popupPhoto = document.querySelector('.popup_photo');
 const popupPhotoName = document.querySelector('.popup__photo-name');
 const popupPhotoImage = document.querySelector('.popup__photo');
 const popups = document.querySelectorAll('.popup');
-const submitButtonAddCard = document.querySelector('.submit-button-add');
 
 const validationConfig = {
   formSelector: '.popup__container-form',
@@ -55,7 +54,6 @@ function addNewCard (evt) {
   renderCard(card, cardsContainer);
   closePopup (popupAddCard);
   popupFormAdd.reset();
-  disableSubmitButton();
 };
 
 //Открыть попапы
@@ -63,10 +61,13 @@ function openPopupEditProfile () {
   openPopup(popupEditProfile);
   nameInput.value = profileAvatarName.textContent;
   jobInput.value = profileAvatarHobby.textContent;
+  formEditValidator.resetValidation();
 };
 
 function openPopupAddCard() {
   openPopup(popupAddCard);
+  formAddValidator.resetValidation();
+  popupFormAdd.reset();
 };
 
 //Сохрание новых данных профиля
@@ -75,12 +76,6 @@ function submitEditProfile (evt) {
   profileAvatarName.textContent = nameInput.value;
   profileAvatarHobby.textContent = jobInput.value;
   closePopup (popupEditProfile);
-};
-
-//Дизейбл кнопки сабмита
-function disableSubmitButton() {
-  submitButtonAddCard.setAttribute('disabled', '');
-  submitButtonAddCard.classList.add('popup__submit-button_disabled');
 };
 
 //Закрыть по оверлею

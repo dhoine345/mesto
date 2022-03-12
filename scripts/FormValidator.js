@@ -45,6 +45,15 @@ export class FormValidator {
     }
   };
 
+  //сбросить валидацию
+  resetValidation = () => {
+    this._toggleButtonState();
+
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement)
+    });
+  }
+
   //добавить слушателей
   _setEventListeners() {
     this._toggleButtonState ();
