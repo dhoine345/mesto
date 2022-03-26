@@ -1,3 +1,18 @@
+export const editButton = document.querySelector('.profile__edit-button');
+export const popupFormEdit = document.querySelector('.popup__container-form_edit');
+export const nameInput = document.querySelector('.popup__container-form-input_type_name');
+export const jobInput = document.querySelector('.popup__container-form-input_type_job');
+export const addButton = document.querySelector('.profile__add-button');
+export const popupFormAdd = document.querySelector('.popup__container-form_add');
+
+export const validationConfig = {
+  formSelector: '.popup__container-form',
+  inputSelector: '.popup__container-form-input',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__submit-button_disabled',
+  inputErrorClass: 'popup__container-form-input_type_error'
+};
+
 export const initialCards = [
   {
     name: 'Карачаево-Черкессия',
@@ -24,5 +39,3 @@ export const initialCards = [
     link: 'https://images.unsplash.com/photo-1643200679012-b30923d42ddd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1987&q=80'
   }
 ];
-
-

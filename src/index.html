@@ -5,16 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./styles/index.css">
 </head>
 
 <body class="page">
   <header class="header">
-    <img src="./image/logo.svg" class="header__logo" alt="Логотип сайта Место Россия.">
+    <img src="<%=require(./image/logo.svg)%>" class="header__logo" alt="Логотип сайта Место Россия.">
   </header>
   <main class="content">
     <section class="profile">
-      <img src="./image/Avatar.jpg" class="profile__avatar" alt="Фотография автора.">
+      <img src="<%=require(./image/Avatar.jpg)%>" class="profile__avatar" alt="Фотография автора.">
       <div class="profile__info">
         <div class="profile__info-text">
           <h1 class="profile__avatar-name">Жак-Ив Кусто</h1>
@@ -31,9 +30,9 @@
         <button class="popup__container-form-close-button button-hover" type="button"></button>
         <h2 class="popup__container-form-title">Редактировать профиль</h2>
         <form class="popup__container-form popup__container-form_edit" name="edit-profile" novalidate>
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_name" value="" required minlength="2" maxlength="40" id="input-name">
+          <input type="text" name="name" class="popup__container-form-input popup__container-form-input_type_name" value="" required minlength="2" maxlength="40" id="input-name">
           <span class="popup__error input-name-error"></span>
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_job" value="" required minlength="2" maxlength="200" id="input-job">
+          <input type="text" name="job" class="popup__container-form-input popup__container-form-input_type_job" value="" required minlength="2" maxlength="200" id="input-job">
           <span class="popup__error input-job-error"></span>
           <button class="popup__submit-button" type="submit">Сохранить</button>
         </form>
@@ -44,9 +43,9 @@
         <button class="popup__container-form-close-button button-hover" type="button"></button>
         <h2 class="popup__container-form-title">Новое место</h2>
         <form class="popup__container-form popup__container-form_add" name="add-new-element" novalidate>
-          <input type="text" class="popup__container-form-input popup__container-form-input_type_place" placeholder="Название" required minlength="2" maxlength="30" id="input-place-name">
+          <input type="text" name="place-name" class="popup__container-form-input popup__container-form-input_type_place" placeholder="Название" required minlength="2" maxlength="30" id="input-place-name">
           <span class="popup__error input-place-name-error"></span>
-          <input type="url" class="popup__container-form-input popup__container-form-input_type_link"  placeholder="Ссылка на картинку" required id="input-place-url">
+          <input type="url" name="link" class="popup__container-form-input popup__container-form-input_type_link"  placeholder="Ссылка на картинку" required id="input-place-url">
           <span class="popup__error input-place-url-error"></span>
           <button class="popup__submit-button submit-button-add" type="submit">Создать</button>
         </form>
@@ -72,7 +71,7 @@
       <button class="element__delete button-hover" type="button"></button>
     </article>
   </template>
-  <script type="module" src="./scripts/index.js"></script>
+
 </body>
 </html>
 
