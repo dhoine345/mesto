@@ -29,8 +29,8 @@ function createCard(item) {
 
 //Добавить карточки на страницу
 function renderCard(item, container) {
-  const CardElement = createCard(item);
-  container.prepend(CardElement);
+  const cardElement = createCard(item);
+  container.prepend(cardElement);
 };
 
 //Добавить карточку из формы
@@ -45,11 +45,11 @@ const addNewCard = (data) => {
 
 //Открыть попапы
 function openPopupEditProfile () {
-  editProfilePopup.open();
   const { name, job } = userInfo.getUserInfo();
   nameInput.value = name;
   jobInput.value = job;
   formEditValidator.resetValidation();
+  editProfilePopup.open();
 };
 
 function openPopupAddCard() {
