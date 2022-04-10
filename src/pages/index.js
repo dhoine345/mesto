@@ -28,7 +28,7 @@ let userId
     userInfo.setUserInfo(data.name, data.about)
     userInfo.setUserAvatar(data.avatar)
     userId = data._id
-    cardList.forEach(data => {
+    cardList.reverse().forEach(data => {
       const card = createCard(forNewCArd(data))
       section.addItem(card)
     })

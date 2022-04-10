@@ -25,7 +25,7 @@ export class Popup {
     const closeButton = this._popup.querySelector('.popup__container-form-close-button')
 
      this._popup.addEventListener('click', (e) => {
-      if (!e.target.closest('.popup__container') || e.target === closeButton) {
+      if (e.target.classList.contains('popup_opened') || e.target === closeButton) {
         this.close()
       }
     })

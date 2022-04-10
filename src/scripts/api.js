@@ -4,20 +4,25 @@ class Api {
     this._baseUrl = baseUrl;
   }
 
+  _getResponseData(res) {
+    if (!res.ok) {
+        return Promise.reject(`Ошибка: ${res.status}`);
+    }
+    return res.json();
+  }
+
   getProfile() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._header
     })
-      .then(res => res.ok ? res.json() : Promise.reject(res.status))
-      .catch(console.log)
+      .then(res => this._getResponseData(res))
   }
 
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._header
     })
-    .then(res => res.ok ? res.json() : Promise.reject(res.status))
-    .catch(console.log)
+      .then(res => this._getResponseData(res))
   }
 
   editProfile(name, about) {
@@ -29,8 +34,7 @@ class Api {
         about
       })
     })
-    .then(res => res.ok ? res.json() : Promise.reject(res.status))
-    .catch(console.log)
+      .then(res => this._getResponseData(res))
   }
 
   addCard(name, link) {
@@ -42,8 +46,7 @@ class Api {
         link
       })
     })
-    .then(res => res.ok ? res.json() : Promise.reject(res.status))
-    .catch(console.log)
+      .then(res => this._getResponseData(res))
   }
 
   deleteCard(id) {
@@ -51,8 +54,7 @@ class Api {
       method: 'DELETE',
       headers: this._header
     })
-    .then(res => res.ok ? res.json() : Promise.reject(res.status))
-    .catch(console.log)
+      .then(res => this._getResponseData(res))
   }
 
   deleteLike(id) {
@@ -60,8 +62,7 @@ class Api {
       method: 'DELETE',
       headers: this._header
     })
-    .then(res => res.ok ? res.json() : Promise.reject(res.status))
-    .catch(console.log)
+      .then(res => this._getResponseData(res))
   }
 
   setLike(id) {
@@ -69,8 +70,7 @@ class Api {
       method: 'PUT',
       headers: this._header
     })
-    .then(res => res.ok ? res.json() : Promise.reject(res.status))
-    .catch(console.log)
+      .then(res => this._getResponseData(res))
   }
 
   editAvatar(avatar) {
@@ -81,8 +81,7 @@ class Api {
         avatar
       })
     })
-    .then(res => res.ok ? res.json() : Promise.reject(res.status))
-    .catch(console.log)
+      .then(res => this._getResponseData(res))
   }
 }
 
