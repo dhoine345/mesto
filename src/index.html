@@ -14,10 +14,11 @@
   <main class="content">
     <section class="profile">
       <img src="<%=require('./image/Avatar.jpg')%>" class="profile__avatar" alt="Фотография автора.">
+      <button class="profile__avatar-edit" type="button" aria-label="Edit button"></button>
       <div class="profile__info">
         <div class="profile__info-text">
-          <h1 class="profile__avatar-name">Жак-Ив Кусто</h1>
-          <p class="profile__avatar-job">Исследователь океана</p>
+          <h1 class="profile__avatar-name"></h1>
+          <p class="profile__avatar-job"></p>
         </div>
         <button class="profile__edit-button button-hover" type="button"></button>
       </div>
@@ -58,6 +59,26 @@
         <h2 class="popup__photo-name"></h2>
       </div>
     </div>
+    <div class="popup popup_delete-card">
+      <div class="popup__container">
+        <button class="popup__container-form-close-button button-hover" type="button"></button>
+        <h2 class="popup__container-form-title">Вы уверены?</h2>
+        <form class="popup__container-form popup__container-form_delete" name="delete-element" novalidate>
+          <button class="popup__submit-button submit-button-delete" type="submit">Да</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_edit-avatar">
+      <div class="popup__container">
+        <button class="popup__container-form-close-button button-hover" type="button"></button>
+        <h2 class="popup__container-form-title">Обновить аватар</h2>
+        <form class="popup__container-form popup__container-form_avatar" name="edit-avatar" novalidate>
+          <input type="url" name="avatar" class="popup__container-form-input popup__container-form-input_type_avatar"  placeholder="Ссылка на фото аватара" required id="input-avatar-url">
+          <span class="popup__error input-avatar-url-error"></span>
+          <button class="popup__submit-button submit-button-add" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
@@ -67,7 +88,10 @@
     <article class="element">
       <img class="element__place-photo">
       <h2 class="element__place-name"></h2>
-      <button class="element__like" type="button"></button>
+      <div class="element__like-and-counter">
+        <button class="element__like" type="button"></button>
+        <span class="element__likes-counter"></span>
+      </div>
       <button class="element__delete button-hover" type="button"></button>
     </article>
   </template>

@@ -2,6 +2,7 @@ export class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector)
     this._handleEscClose = this._handleEscClose.bind(this)
+    this._submitButton = this._popup.querySelector('.popup__submit-button');
   }
 
   open() {
@@ -28,5 +29,13 @@ export class Popup {
         this.close()
       }
     })
+  }
+
+  renderLoading(isLoading) {
+    if (isLoading) {
+      this._submitButton.textContent = 'Сохранение...';
+    } else {
+      this._submitButton.textContent = this._initButtonText;
+    }
   }
 }
