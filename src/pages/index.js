@@ -53,6 +53,8 @@ const submitEditProfile = (data) => {
       userInfo.setUserInfo(res.name, res.about);
       editProfilePopup.close();
     })
+    .catch(console.log)
+    .finally(() => editProfilePopup.renderLoading(false))
 };
 
 //Добавить карточку из формы
@@ -64,6 +66,8 @@ const addNewCard = (data) => {
       section.addItem(card);
       addCardPopup.close();
     })
+    .catch(console.log)
+    .finally(() => addCardPopup.renderLoading(false))
 };
 
 //Добавление класса карточки
@@ -82,6 +86,7 @@ function createCard(item) {
             cards.deleteCard();
             deletePopup.close();
           })
+          .catch(console.log)
       });
     },
     (id) => {
@@ -90,11 +95,13 @@ function createCard(item) {
           .then(res => {
           cards.setLikes(res.likes)
         })
+        .catch(console.log)
       } else {
         api.setLike(id)
         .then(res => {
           cards.setLikes(res.likes)
         })
+        .catch(console.log)
       }
     }
   );
@@ -135,6 +142,8 @@ const submitEditAvatar = (data) => {
         userInfo.setUserAvatar(res.avatar);
         editAvatarPopup.close();
       })
+      .catch(console.log)
+      .finally(() => editAvatarPopup.renderLoading(false))
 };
 
 editButton.addEventListener('click', openPopupEditProfile); //открыть форму редактирования профайла
